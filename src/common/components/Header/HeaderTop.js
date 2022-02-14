@@ -14,7 +14,7 @@ const HeaderTop = () =>
         <div className="container">
             <div className="header-wrap">
                 <div className="logo logo-width-1">
-                    <a href="index.html"><img src={Logo} alt="logo" /></a>
+                    <NavLink to="/"><img src={Logo} alt="logo" /></NavLink>
                 </div>
                 <div className="header-right">
                     <div className="search-style-2">
@@ -58,25 +58,25 @@ const HeaderTop = () =>
                                 </form>
                             </div>
                             <div className="header-action-icon-2">
-                                <a href="shop-compare.html">
+                                <NavLink to="/compare">
                                     <img className="svgInject" alt="Nest" src={ComIcon} />
                                     <span className="pro-count blue">3</span>
-                                </a>
-                                <NavLink className="navbar-item" activeClassName="is-active" to="/compare"><span className="lable ml-0">Compare</span></NavLink>
+                                </NavLink>
+                                <NavLink className="navbar-item" className="is-active" to="/compare"><span className="lable ml-0">Compare</span></NavLink>
                             </div>
                             <div className="header-action-icon-2">
-                                <a href="shop-wishlist.html">
+                                <NavLink to="/wishlist">
                                     <img className="svgInject" alt="Nest" src={WishIcon} />
                                     <span className="pro-count blue">6</span>
-                                </a>
-                                <NavLink className="navbar-item" activeClassName="is-active" to="/wishlist"><span className="lable">Wishlist</span></NavLink>
+                                </NavLink>
+                                <NavLink className="navbar-item" className="is-active" to="/wishlist"><span className="lable">Wishlist</span></NavLink>
                             </div>
                             <div className="header-action-icon-2">
-                                <a className="mini-cart-icon" href="shop-cart.html">
+                                <NavLink className="mini-cart-icon" to="/cart">
                                     <img alt="Nest" src={CartIcon} />
                                     <span className="pro-count blue">2</span>
-                                </a>
-                                <NavLink className="navbar-item" activeClassName="is-active" to="/cart"><span className="lable">Cart</span></NavLink>
+                                </NavLink>
+                                <NavLink className="navbar-item" className="is-active" to="/cart"><span className="lable">Cart</span></NavLink>
                                 <div className="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
@@ -109,25 +109,25 @@ const HeaderTop = () =>
                                             <h4>Total <span>$4000.00</span></h4>
                                         </div>
                                         <div className="shopping-cart-button">
-                                            <a href="shop-cart.html" className="outline">View cart</a>
-                                            <a href="shop-checkout.html">Checkout</a>
+                                            <NavLink to="/cart" className="outline">View cart</NavLink>
+                                            <NavLink to="/checkout">Checkout</NavLink>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="header-action-icon-2">
-                                <a href="page-account.html">
+                                <NavLink to="/account">
                                     <img className="svgInject" alt="Nest" src={AccIcon} />
-                                </a>
-                                <NavLink className="navbar-item" activeClassName="is-active" to="/account"><span className="lable ml-0">Account</span></NavLink>
+                                </NavLink>
+                                <NavLink className="navbar-item" className="is-active" to="/account"><span className="lable ml-0">Account</span></NavLink>
                                 <div className="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/account"><i className="fi fi-rs-user mr-10"></i>My Account</NavLink></li>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/account"><i className="fi fi-rs-location-alt mr-10"></i>Order Tracking</NavLink></li>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/account"><i className="fi fi-rs-label mr-10"></i>My Voucher</NavLink></li>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/wishlist"><i className="fi fi-rs-heart mr-10"></i>My Wishlist</NavLink></li>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/account"><i className="fi fi-rs-settings-sliders mr-10"></i>Setting</NavLink></li>
-                                        <li><NavLink className="navbar-item" activeClassName="is-active" to="/login"><i className="fi fi-rs-sign-out mr-10"></i>Sign out</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/account"><i className="fi fi-rs-user mr-10"></i>My Account</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/account"><i className="fi fi-rs-location-alt mr-10"></i>Order Tracking</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/account"><i className="fi fi-rs-label mr-10"></i>My Voucher</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/wishlist"><i className="fi fi-rs-heart mr-10"></i>My Wishlist</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/account"><i className="fi fi-rs-settings-sliders mr-10"></i>Setting</NavLink></li>
+                                        <li><NavLink className="navbar-item" className="is-active" to="/login"><i className="fi fi-rs-sign-out mr-10"></i>Sign out</NavLink></li>
                                     </ul>
                                 </div>
                             </div>

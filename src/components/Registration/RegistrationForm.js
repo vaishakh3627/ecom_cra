@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { EMAIL, OTP } from "./constants";
 
@@ -37,28 +37,55 @@ const Heading = () =>
 
 const FormEmail = props => {
 
-    const [email, setEmail] = useState('')
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
+    const [isSubmit, setIsSubmit] = useState(false)
+    const [check, setCheck] = useState(false)
 
     const onSubmit = e => {
 
         e.preventDefault();
-        props.setForm(OTP)
+        if(isSubmit === true && check === true) {
+            props.setForm(OTP)
+        }else {
+            alert('Invalid Email')
+        }
     }
+
+    const handleChange = (e) => {
+        setEmail(e.target.value);
+
+        if(regex.test(email) === false){
+            setError('Invalid Email')
+        }else {
+            setError('');
+            setIsSubmit(true)
+            return true;
+        }
+    }
+
+    const handleCheckbox = (e) => {
+        setCheck(true);
+    }
+
 
     return (
         <form>
             <div className="form-group">
                 <input
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={handleChange}
                     value={email}
                     type="text"
                     required=""
                     placeholder="Email" />
+                <p className="text-danger p-2 m-2">{error}</p>
             </div>
             <div className="login_footer form-group mb-50">
                 <div className="chek-form">
                     <div className="custome-checkbox">
-                        <input className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox12" value="" />
+                        <input onClick={handleCheckbox} className="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox12" value="" />
                         <label className="form-check-label" htmlFor="exampleCheckbox12"><span>I agree to terms &amp; Policy.</span></label>
                     </div>
                 </div>

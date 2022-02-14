@@ -1,9 +1,12 @@
 import React from "react";
 
 import Logo from "../../../assets/imgs/theme/logo.svg";
+import HotImage from "../../../assets/imgs/theme/icons/icon-hot.svg";
+import PhoneImage from "../../../assets/imgs/theme/icons/icon-headphone.svg";
 
 import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import DropdownList from "./HeadBotDrop";
+import { NavLink } from "react-router-dom";
 
 const DropMenu = [
     {
@@ -97,38 +100,18 @@ const HeaderBottom = () => (
               <ul>
                 <li className="hot-deals">
                   <img
-                    src="./assets/imgs/theme/icons/icon-hot.svg"
+                    src={HotImage}
                     alt="hot deals"
                   />
                   <a href="shop-grid-right.html">Hot Deals</a>
                 </li>
                 <li>
-                  <a className="active" href="index.html">
+                  <NavLink className="" to="/">
                     Home <i className="fi-rs-angle-down"></i>
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="index.html">Home 1</a>
-                    </li>
-                    <li>
-                      <a href="index-2.html">Home 2</a>
-                    </li>
-                    <li>
-                      <a href="index-3.html">Home 3</a>
-                    </li>
-                    <li>
-                      <a href="index-4.html">Home 4</a>
-                    </li>
-                    <li>
-                      <a href="index-5.html">Home 5</a>
-                    </li>
-                    <li>
-                      <a href="index-6.html">Home 6</a>
-                    </li>
-                  </ul>
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="page-about.html">About</a>
+                  <NavLink to="/about">About</NavLink>
                 </li>
                 <li>
                   <a href="shop-grid-right.html">
@@ -419,22 +402,19 @@ const HeaderBottom = () => (
                   </a>
                   <ul className="sub-menu">
                     <li>
-                      <a href="page-about.html">About Us</a>
+                      <NavLink to="/about">About Us</NavLink>
                     </li>
                     <li>
-                      <a href="page-contact.html">Contact</a>
+                      <NavLink to="/contact">Contact</NavLink>
                     </li>
                     <li>
-                      <a href="page-account.html">My Account</a>
+                      <NavLink to="/account">My Account</NavLink>
                     </li>
                     <li>
-                      <a href="page-login.html">Login</a>
+                      <NavLink to="/login">Login</NavLink>
                     </li>
                     <li>
-                      <a href="page-register.html">Register</a>
-                    </li>
-                    <li>
-                      <a href="page-purchase-guide.html">Purchase Guide</a>
+                      <NavLink to="/registration">Register</NavLink>
                     </li>
                     <li>
                       <a href="page-privacy-policy.html">Privacy Policy</a>
@@ -443,12 +423,12 @@ const HeaderBottom = () => (
                       <a href="page-terms.html">Terms of Service</a>
                     </li>
                     <li>
-                      <a href="page-404.html">404 Page</a>
+                      <NavLink to="*">404 Page</NavLink>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="page-contact.html">Contact</a>
+                  <NavLink to="/contact">Contact</NavLink>
                 </li>
               </ul>
             </nav>
@@ -456,7 +436,7 @@ const HeaderBottom = () => (
         </div>
         <div className="hotline d-none d-lg-flex">
           <img
-            src="./assets/imgs/theme/icons/icon-headphone.svg"
+            src={PhoneImage}
             alt="hotline"
           />
           <p>
