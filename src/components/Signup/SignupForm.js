@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Modal, Collapse } from "react-bootstrap";
 
 import { _validateEmail } from "../../common/validators/inputValidators";
+import { sendEmalOtp } from "./api";
 
 import { EMAIL, OTP } from "./constants";
 
@@ -86,7 +87,11 @@ const FormEmail = ({
     const handleSubmit = (e) => {
 
         e.preventDefault()
-        setComponent(OTP)
+        // setComponent(OTP)
+        sendEmalOtp({ to: data })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+        console.log(data)
     }
 
     const toggleShow = (e) => {
