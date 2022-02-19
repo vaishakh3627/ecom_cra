@@ -1,6 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import { useAuth } from "./AuthContext";
+
+import RequireAuth from "./RequireAuh";
 import Login from "./container/Login";
 import Registration from "./container/Registration";
 import PageNotFound from "./container/404";
@@ -8,15 +11,17 @@ import Home from "./container/Home";
 import About from "./container/About";
 import Cart from "./container/Cart";
 import Account from "./container/Account";
-import Checkout from "./container/Chechout";
+import Checkout from "./container/Checkout";
 import Compare from "./container/Compare";
 import Contact from "./container/Contact";
 import Wishlist from "./container/Wishlist";
+import PreLoader from "./common/preloader";
 
 const ApplicationRoutes = () => {
+
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home/>} />
       <Route path="login" element={<Login />} />
       <Route path="registration" element={<Registration />} />
       <Route path="about" element={<About />} />

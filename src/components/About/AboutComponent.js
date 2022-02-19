@@ -6,12 +6,20 @@ import StatisticsComponent from "./StatisticsComponents";
 import { TeamComponent, PersonsComponent } from "./TeamComponent";
 import WelcomeHeader from "./WelcomeHeader";
 
-import ImageType1 from "../../assets/imgs/theme/icons/icon-1.svg";
-import ImageType2 from "../../assets/imgs/theme/icons/icon-2.svg";
-import ImageType3 from "../../assets/imgs/theme/icons/icon-3.svg";
-import ImageType4 from "../../assets/imgs/theme/icons/icon-4.svg";
-import ImageType5 from "../../assets/imgs/theme/icons/icon-5.svg";
-import ImageType6 from "../../assets/imgs/theme/icons/icon-6.svg";
+import  ImageType1  from "../../assets/imgs/theme/icons/icon-1.svg";
+import  ImageType2  from "../../assets/imgs/theme/icons/icon-2.svg";
+import  ImageType3  from "../../assets/imgs/theme/icons/icon-3.svg";
+import  ImageType4  from "../../assets/imgs/theme/icons/icon-4.svg";
+import  ImageType5  from "../../assets/imgs/theme/icons/icon-5.svg";
+import  ImageType6  from "../../assets/imgs/theme/icons/icon-6.svg";
+
+import AboutImage1 from "../../assets/imgs/page/about-6.png";
+import AboutImage2 from "../../assets/imgs/page/about-8.png";
+
+import Facebook from "../../assets/imgs/theme/icons/icon-facebook-brand.svg";
+import Twitter from "../../assets/imgs/theme/icons/icon-twitter-brand.svg";
+import Instagram from "../../assets/imgs/theme/icons/icon-instagram-brand.svg";
+import Youtube from "../../assets/imgs/theme/icons/icon-youtube-brand.svg";
 
 const AboutComponent = () => {
 
@@ -33,32 +41,32 @@ const AboutComponent = () => {
 
     const Service = [
         {
-            imageType: {ImageType1},
+            imageLine: ImageType1,
             headingLine: "Best Prices & Offers",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         },
         {
-            imageType: {ImageType2},
+            imageLine: ImageType2,
             headingLine: "Wide Assortment",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         },
         {
-            imageType: {ImageType3},
+            imageLine: ImageType3,
             headingLine: "Free Delivery",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         },
         {
-            imageType: {ImageType4},
+            imageLine: ImageType4,
             headingLine: "Easy Returns",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         },
         {
-            imageType: {ImageType5},
+            imageLine: ImageType5,
             headingLine: "100% Satisfaction",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         },
         {
-            imageType: {ImageType6},
+            imageLine: ImageType6,
             headingLine: "Great Daily Deal",
             contectType: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form",
         }
@@ -89,22 +97,22 @@ const AboutComponent = () => {
 
     const person = [
         {
-            imageLine: "assets/imgs/page/about-6.png",
+            imageLine: AboutImage1,
             nameLine: "H. Merinda",
             positionLine: "CEO & Co-Founder",
-            facebookLine: "assets/imgs/theme/icons/icon-facebook-brand.svg",
-            twitterLine: "assets/imgs/theme/icons/icon-twitter-brand.svg",
-            instagramLine: "assets/imgs/theme/icons/icon-instagram-brand.svg",
-            youtubeLine: "assets/imgs/theme/icons/icon-youtube-brand.svg"
+            facebookLine: Facebook,
+            twitterLine: Twitter,
+            instagramLine: Instagram,
+            youtubeLine: Youtube
         },
         {
-            imageLine: "assets/imgs/page/about-8.png",
+            imageLine: AboutImage2,
             nameLine: "Dilan Specter",
             positionLine: "Head Engineer",
-            facebookLine: "assets/imgs/theme/icons/icon-facebook-brand.svg",
-            twitterLine: "assets/imgs/theme/icons/icon-twitter-brand.svg",
-            instagramLine: "assets/imgs/theme/icons/icon-instagram-brand.svg",
-            youtubeLine: "assets/imgs/theme/icons/icon-youtube-brand.svg"
+            facebookLine: Facebook,
+            twitterLine: Twitter,
+            instagramLine: Instagram,
+            youtubeLine: Youtube
         }
     ]
 

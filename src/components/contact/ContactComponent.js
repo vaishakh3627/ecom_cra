@@ -1,4 +1,5 @@
 import React from "react";
+
 import AddressItem from "./AddressItem";
 import ContactFormComponent from "./ContactForm";
 import { HelpComponent, HelpDivision } from "./HelpComponent";
@@ -88,7 +89,4 @@ const ContactComponent = () => {
         </div>
     );
 }
-
-
-
 export default ContactComponent
