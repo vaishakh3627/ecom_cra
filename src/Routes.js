@@ -21,9 +21,9 @@ const ApplicationRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="login" element={<Login />} />
-      <Route path="registration" element={<Registration />} />
+      <Route path="/" element={<Home />} />
+      <Route path="signup" element={<Login />} />
+      <Route path="signup" element={<Registration />} />
       <Route path="about" element={<About />} />
       <Route path="cart" element={<Cart />} />
       <Route path="account" element={<Account />} />
