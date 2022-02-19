@@ -411,7 +411,7 @@ const HeaderBottom = () => (
                       <NavLink to="/account">My Account</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/login">Login</NavLink>
+                      <NavLink to="/login">Signin</NavLink>
                     </li>
                     <li>
                       <NavLink to="/registration">Register</NavLink>

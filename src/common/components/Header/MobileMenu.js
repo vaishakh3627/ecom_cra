@@ -136,7 +136,7 @@ const MobileMenu = () =>
                                     <li><a href="page-about.html">About Us</a></li>
                                     <li><a href="page-contact.html">Contact</a></li>
                                     <li><a href="page-account.html">My Account</a></li>
-                                    <li><a href="page-login.html">Login</a></li>
+                                    <li><a href="page-login.html">Signin</a></li>
                                     <li><a href="page-register.html">Register</a></li>
                                     <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
                                     <li><a href="page-privacy-policy.html">Privacy Policy</a></li>

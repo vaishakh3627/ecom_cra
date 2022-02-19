@@ -1,6 +1,6 @@
 import React from "react";
 
-import ContactComponent from "../components/contact/index"
+import ContactComponent from "../components/Contact";
 
 const Contact = () =>
     <ContactComponent />

@@ -2,7 +2,7 @@ import React from "react";
 
 import LoginImage from '../../assets/imgs/page/login-1.png'
 
-const LoginComponent = () => {
+const SigninComponent = () => {
 
     return (
         <div className="page-content pt-150 pb-150">
@@ -17,7 +17,7 @@ const LoginComponent = () => {
                                 <div className="login_wrap widget-taber-content background-white">
                                     <div className="padding_eight_all bg-white">
                                         <div className="heading_s1">
-                                            <h1 className="mb-5">Login</h1>
+                                            <h1 className="mb-5">Signin</h1>
                                             <p className="mb-30">Don't have an account? <a href="/registration">Create
                                                 here</a></p>
                                         </div>
@@ -69,4 +69,4 @@ const LoginComponent = () => {
     );
 }
 
-export default LoginComponent
+export default SigninComponent

@@ -1,6 +1,6 @@
 import React from "react";
 
-import CheckoutComponent from "../components/checkout/index";
+import CheckoutComponent from "../components/Checkout";
 
 const Checkout = () =>
 

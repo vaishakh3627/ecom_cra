@@ -3,10 +3,10 @@ import React from "react";
 import SubComponent from "./SubComponent";
 
 
-const AccountComponent = () =>{
+const AccountComponent = () => {
 
-    return(<>
-    <SubComponent />
+    return (<>
+        <SubComponent />
     </>)
 }
 

@@ -4,8 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
 import RequireAuth from "./RequireAuh";
-import Login from "./container/Login";
-import Registration from "./container/Registration";
+import Signin from "./container/Signin";
+import Signup from "./container/Signup";
 import PageNotFound from "./container/404";
 import Home from "./container/Home";
 import About from "./container/About";
@@ -22,8 +22,8 @@ const ApplicationRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="signup" element={<Login />} />
-      <Route path="signup" element={<Registration />} />
+      <Route path="signin" element={<Signin />} />
+      <Route path="signup" element={<Signup />} />
       <Route path="about" element={<About />} />
       <Route path="cart" element={<Cart />} />
       <Route path="account" element={<Account />} />

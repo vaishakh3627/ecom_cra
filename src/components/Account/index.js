@@ -4,7 +4,7 @@ import AccountComponent from "./AccountComponent";
 
 const Account = () =>
     <main className="main pages">
-        <BreadCrumb pages={['Pages', 'Account']}/>
+        <BreadCrumb pages={['Pages', 'Account']} />
         <AccountComponent />
     </main>
 
