@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
+import OtpInput from 'react-otp-input';
 import { Button, Modal, Collapse } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 import { _validateEmail } from "../../common/validators/inputValidators";
 import { sendEmalOtp } from "./api";
@@ -32,7 +34,7 @@ const SignupForm = props => {
     const Heading = () =>
         <div className="heading_s1">
             <h1 className="mb-5">Create an Account</h1>
-            <p className="mb-30">Already have an account? <a href="/login">Signin</a></p>
+            <p className="mb-30">Already have an account? <NavLink to="/signin">Signin</NavLink></p>
         </div>
 
     const onSubmit = () => console.log("account created")
@@ -160,11 +162,12 @@ const FormOtp = ({
         <form>
             <h6 className="mb-20">An OTP has been successfully sent to your mail address: {email || `abc@xyz.com`}</h6>
             <div className="form-group">
-                <input
-                    value="email"
-                    type="text"
-                    required=""
-                    placeholder="OTP" />
+                <OtpInput
+                    value=""
+                    // onChange={}
+                    numInputs={6}
+                    separator={<span>-</span>}
+                />
             </div>
             <div className="form-group mb-30">
                 <button onClick={() => console.log("HI")} className="btn btn-fill-out btn-block hover-up font-weight-bold">Submit</button>
