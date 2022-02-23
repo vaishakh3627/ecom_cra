@@ -1,5 +1,5 @@
 import React from "react";
-import { Constants } from "../../common/constants/constants";
+import { countries } from "../../common/constants/constants";
 
 const ShippingCharge = () =>
     <div className="calculate-shiping p-40 border-radius-15 border">
@@ -11,7 +11,7 @@ const ShippingCharge = () =>
                     <div className="custom_select">
                         <select className="form-control select-active w-100">
                             {
-                                Constants.map(item => <Country key={item.name} {...item} />)
+                                countries.map(item => <Country key={item.name} {...item} />)
                             }
                         </select>
                     </div>
@@ -28,9 +28,12 @@ const ShippingCharge = () =>
         </form>
     </div>
 
-const Country = (Constants) =>
+const Country = (props) =>
     <>
-        <option value="">{Constants.name}</option>
+    {
+        console.log(props)
+    }
+        <option value="">{countries.name}</option>
     </>
 
 export default ShippingCharge;

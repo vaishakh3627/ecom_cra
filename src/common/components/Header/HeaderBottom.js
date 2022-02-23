@@ -3,63 +3,78 @@ import React from "react";
 import Logo from "../../../assets/imgs/theme/logo.svg";
 import HotImage from "../../../assets/imgs/theme/icons/icon-hot.svg";
 import PhoneImage from "../../../assets/imgs/theme/icons/icon-headphone.svg";
+import Banner from "../../../assets/imgs/banner/banner-menu.png";
+import HeartIcon from "../../../assets/imgs/theme/icons/icon-heart.svg";
+import CartIcon from "../../../assets/imgs/theme/icons/icon-cart.svg";
+import Thumbnail3 from "../../../assets/imgs/shop/thumbnail-3.jpg";
+import Thumbnail4 from "../../../assets/imgs/shop/thumbnail-4.jpg";
+import Category1 from "../../../assets/imgs/theme/icons/category-1.svg";
+import Category2 from "../../../assets/imgs/theme/icons/category-2.svg";
+import Category3 from "../../../assets/imgs/theme/icons/category-3.svg";
+import Category4 from "../../../assets/imgs/theme/icons/category-4.svg";
+import Category5 from "../../../assets/imgs/theme/icons/category-5.svg";
+import Category6 from "../../../assets/imgs/theme/icons/category-6.svg";
+import Category7 from "../../../assets/imgs/theme/icons/category-7.svg";
+import Category8 from "../../../assets/imgs/theme/icons/category-8.svg";
+import Category9 from "../../../assets/imgs/theme/icons/category-9.svg";
+import Category10 from "../../../assets/imgs/theme/icons/category-10.svg";
 
-import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
+import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import DropdownList from "./HeadBotDrop";
 import { NavLink } from "react-router-dom";
 
 const DropMenu = [
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-1.svg",
-        nameLine: "Milks and Dairies"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-2.svg",
-        nameLine: "Clothing & beauty"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-3.svg",
-        nameLine: "Pet Foods & Toy"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-4.svg",
-        nameLine: "Baking material"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-5.svg",
-        nameLine: "Fresh Fruit"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-6.svg",
-        nameLine: "Wines & Drinks"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-7.svg",
-        nameLine: "Fresh Seafood"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-8.svg",
-        nameLine: "Fast food"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-9.svg",
-        nameLine: "Vegetables"
-    },
-    {
-        htmlLine: "shop-grid-right.html",
-        imageLine: "./assets/imgs/theme/icons/category-10.svg",
-        nameLine: "Bread and Juice"
-    }
-]
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category1,
+    nameLine: "Milk and Dairies",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category2,
+    nameLine: "Clothing & beauty",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category3,
+    nameLine: "Pet Foods & Toy",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category4,
+    nameLine: "Baking material",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category5,
+    nameLine: "Fresh Fruit",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category6,
+    nameLine: "Wines & Drinks",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category7,
+    nameLine: "Fresh Seafood",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category8,
+    nameLine: "Fast food",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category9,
+    nameLine: "Vegetables",
+  },
+  {
+    htmlLine: "shop-grid-right.html",
+    imageLine: Category10,
+    nameLine: "Bread and Juice",
+  },
+];
 
 const HeaderBottom = () => (
   <div className="header-bottom header-bottom-bg-color sticky-bar">
@@ -71,38 +86,29 @@ const HeaderBottom = () => (
           </a>
         </div>
         <div className="header-nav d-none d-lg-flex">
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <span className="fi-rs-apps"></span>{" "}
-              <span className="et">Browse</span> All Categories
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Row>
-                {
-                    DropMenu.map(item => <DropdownList key={item.nameLine} {...item} />)
-                }
-              </Row>
-            </Dropdown.Menu>
-           </Dropdown>
-
           <div className="main-categori-wrap d-none d-lg-block">
-            <div className="categories-dropdown-wrap categories-dropdown-active-large font-heading">
-              <div className="d-flex categori-dropdown-inner">
-              </div>
-              <div className="more_categories">
-                <span className="icon"></span>{" "}
-                <span className="heading-sm-1">Show more...</span>
-              </div>
-            </div>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                Browse All Categories
+              </Dropdown.Toggle>
+              <Dropdown.Menu style={{width: "150%"}}>
+                <Container>
+                  <Row>
+                    <Dropdown.Item>
+                      {DropMenu.map((item) => (
+                        <DropdownList key={item.nameLine} {...item} />
+                      ))}
+                    </Dropdown.Item>
+                  </Row>
+                </Container>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
           <div className="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
             <nav>
               <ul>
                 <li className="hot-deals">
-                  <img
-                    src={HotImage}
-                    alt="hot deals"
-                  />
+                  <img src={HotImage} alt="hot deals" />
                   <a href="shop-grid-right.html">Hot Deals</a>
                 </li>
                 <li>
@@ -328,10 +334,7 @@ const HeaderBottom = () => (
                     <li className="sub-mega-menu sub-mega-menu-width-34">
                       <div className="menu-banner-wrap">
                         <a href="shop-product-right.html">
-                          <img
-                            src="./assets/imgs/banner/banner-menu.png"
-                            alt="Nest"
-                          />
+                          <img src={Banner} alt="Nest" />
                         </a>
                         <div className="menu-banner-content">
                           <h4>Hot deals</h4>
@@ -435,10 +438,7 @@ const HeaderBottom = () => (
           </div>
         </div>
         <div className="hotline d-none d-lg-flex">
-          <img
-            src={PhoneImage}
-            alt="hotline"
-          />
+          <img src={PhoneImage} alt="hotline" />
           <p>
             1900 - 888<span>24/7 Support Center</span>
           </p>
@@ -454,16 +454,13 @@ const HeaderBottom = () => (
           <div className="header-action-2">
             <div className="header-action-icon-2">
               <a href="shop-wishlist.html">
-                <img
-                  alt="Nest"
-                  src="./assets/imgs/theme/icons/icon-heart.svg"
-                />
+                <img alt="Nest" src={HeartIcon} />
                 <span className="pro-count white">4</span>
               </a>
             </div>
             <div className="header-action-icon-2">
               <a className="mini-cart-icon" href="shop-cart.html">
-                <img alt="Nest" src="./assets/imgs/theme/icons/icon-cart.svg" />
+                <img alt="Nest" src={CartIcon} />
                 <span className="pro-count white">2</span>
               </a>
               <div className="cart-dropdown-wrap cart-dropdown-hm2">
@@ -471,10 +468,7 @@ const HeaderBottom = () => (
                   <li>
                     <div className="shopping-cart-img">
                       <a href="shop-product-right.html">
-                        <img
-                          alt="Nest"
-                          src="./assets/imgs/shop/thumbnail-3.jpg"
-                        />
+                        <img alt="Nest" src={Thumbnail3} />
                       </a>
                     </div>
                     <div className="shopping-cart-title">
@@ -496,10 +490,7 @@ const HeaderBottom = () => (
                   <li>
                     <div className="shopping-cart-img">
                       <a href="shop-product-right.html">
-                        <img
-                          alt="Nest"
-                          src="./assets/imgs/shop/thumbnail-4.jpg"
-                        />
+                        <img alt="Nest" src={Thumbnail4} />
                       </a>
                     </div>
                     <div className="shopping-cart-title">

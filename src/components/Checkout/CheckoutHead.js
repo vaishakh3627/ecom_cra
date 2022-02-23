@@ -16,6 +16,7 @@ const CheckoutHead = () => (
 );
 
 const CheckoutLogin = () => {
+
   const [show, setShow] = useState(false);
 
   const handlePreview = (e) => {

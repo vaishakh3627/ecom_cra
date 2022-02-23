@@ -1,10 +1,5 @@
-export const Constants =
+export const countries =
     [
-        {
-            "name": "Select",
-            "dial_code": "",
-            "code": ""
-        },
         {
             "name": "Afghanistan",
             "dial_code": "+93",

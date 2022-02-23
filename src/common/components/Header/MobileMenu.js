@@ -1,11 +1,13 @@
 import React from "react";
 
+import Logo from '../../../assets/imgs/theme/logo.svg';
+
 const MobileMenu = () =>
     <div className="mobile-header-active mobile-header-wrapper-style">
         <div className="mobile-header-wrapper-inner">
             <div className="mobile-header-top">
                 <div className="mobile-header-logo">
-                    <a href="index.html"><img src="./assets/imgs/theme/logo.svg" alt="logo" /></a>
+                    <a href="index.html"><img src={Logo} alt="logo" /></a>
                 </div>
                 <div className="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button className="close-style search-close">
