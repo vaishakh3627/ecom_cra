@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { useAuth } from "./AuthContext";
 
-import RequireAuth from "./RequireAuh";
+import RequireAuth from "./RequireAuth";
 import Signin from "./container/Signin";
 import Signup from "./container/Signup";
 import PageNotFound from "./container/404";
@@ -26,7 +26,13 @@ const ApplicationRoutes = () => {
       <Route path="signup" element={<Signup />} />
       <Route path="about" element={<About />} />
       <Route path="cart" element={<Cart />} />
-      <Route path="account" element={<Account />} />
+      <Route
+        path="account"
+        element={
+          <RequireAuth>
+            <Account />
+          </RequireAuth>
+        } />
       <Route path="checkout" element={<Checkout />} />
       <Route path="compare" element={<Compare />} />
       <Route path="contact" element={<Contact />} />

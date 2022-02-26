@@ -4,10 +4,9 @@ const configApp = require("../config");
 
 export function graphQLObj(type = "") {
     let reqHeader = {
-        "x-trdr-org": "6151870d3431010cb7ed351",
+        "x-trdr-org": "6151df36faf2a6fb0edff873",
         crossDomain: true,
     };
-    console.log(reqHeader)
     if (
         localStorage.getItem("token") &&
         localStorage.getItem("token") != null &&

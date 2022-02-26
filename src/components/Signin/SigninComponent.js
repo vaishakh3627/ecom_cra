@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import LoginImage from "../../assets/imgs/page/login-1.png";
 import { useOverlay } from "../../OverlayContext";
@@ -26,7 +27,7 @@ const SigninComponent = () => {
                       <h1 className="mb-5">Signin</h1>
                       <p className="mb-30">
                         Don't have an account?{" "}
-                        <a href="/registration">Create here</a>
+                        <Link to="signup">Signup</Link>
                       </p>
                     </div>
                     <form method="post">
