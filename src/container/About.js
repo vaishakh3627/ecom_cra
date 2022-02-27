@@ -1,9 +1,8 @@
 import React from "react";
 
-import AboutComponent from "../components/About/index"
+import AboutComponent from "../components/About/index";
+import "../index.scss";
 
-const About = () =>
-    <AboutComponent />
+const About = () => <AboutComponent />;
 
-
-export default About
+export default About;

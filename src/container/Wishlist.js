@@ -1,9 +1,8 @@
 import React from "react";
 
 import WishlistComponent from "../components/Wishlist/index";
+import "../index.scss";
 
-const Wishlist = () =>
+const Wishlist = () => <WishlistComponent />;
 
-    <WishlistComponent />
-
-export default Wishlist
+export default Wishlist;

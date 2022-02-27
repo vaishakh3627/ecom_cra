@@ -1,8 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { useAuth } from "./AuthContext";
-
 import RequireAuth from "./RequireAuth";
 import Signin from "./container/Signin";
 import Signup from "./container/Signup";
@@ -15,10 +13,8 @@ import Checkout from "./container/Checkout";
 import Compare from "./container/Compare";
 import Contact from "./container/Contact";
 import Wishlist from "./container/Wishlist";
-import PreLoader from "./common/preloader";
 
 const ApplicationRoutes = () => {
-
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -32,7 +28,8 @@ const ApplicationRoutes = () => {
           <RequireAuth>
             <Account />
           </RequireAuth>
-        } />
+        }
+      />
       <Route path="checkout" element={<Checkout />} />
       <Route path="compare" element={<Compare />} />
       <Route path="contact" element={<Contact />} />

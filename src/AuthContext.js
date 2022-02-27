@@ -1,50 +1,46 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
-const AuthProvider = props => {
+const AuthProvider = (props) => {
+  const [user, setUser] = useState({
+    type: "admin",
+    token: null,
+    isLoading: true,
+  });
 
-    const [user, setUser] = useState({
-        token: null,
-        isLoading: true
-    })
+  const updateUser = (token, type) =>
+    setUser({
+      type: type,
+      token: token,
+      isLoading: false,
+    });
 
-    const updateUser = token =>
-        setUser({
-            token: token,
-            isLoading: false
-        })
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("ecom-user-key"));
+    if (token !== user.token) updateUser(token, "admin");
+    else updateUser(null);
+  }, []);
 
-    useEffect(() => {
+  const signin = (token, cb) => {
+    updateUser(token, "admin");
+    localStorage.setItem("ecom-user-key", JSON.stringify(token));
+    cb();
+  };
 
-        let token = JSON.parse(localStorage.getItem("ecom-user-key"))
-        if (token !== user.token)
-            updateUser(token)
-        else
-            updateUser(null)
-    }, [])
+  const signout = () => {
+    updateUser(null);
+    localStorage.removeItem("ecom-user-key");
+  };
 
-    const signin = (token, cb) => {
+  const authContextValue = {
+    user,
+    signin,
+    signout,
+  };
 
-        updateUser(token)
-        localStorage.setItem("ecom-user-key", JSON.stringify(token))
-        cb()
-    };
-
-    const signout = () => {
-
-        updateUser(null)
-        localStorage.removeItem("ecom-user-key")
-    };
-
-    const authContextValue = {
-        user,
-        signin,
-        signout
-    };
-
-    return <AuthContext.Provider value={authContextValue} {...props} />
-}
+  return <AuthContext.Provider value={authContextValue} {...props} />;
+};
 
 const useAuth = () => useContext(AuthContext);
 

@@ -7,7 +7,6 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./AuthContext";
 import { OverlayProvider } from "./OverlayContext";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
