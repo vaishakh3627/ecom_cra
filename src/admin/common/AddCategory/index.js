@@ -1,7 +1,19 @@
 import React, { useState } from "react";
+import { useMutation } from "react-query";
 import { Button, Collapse, Form, Modal } from "react-bootstrap";
 
+import { createCategory } from "../../api";
+
 const AddNewCategory = ({ show, onClose, onSubmit }) => {
+  const createCategoryMutation = useMutation(createCategory, {
+    onSuccess: (res) => {
+      console.log(res);
+    },
+    onError: (err) => {
+      console.log(err);
+    },
+  });
+
   const [data, setData] = useState({
     category_name: null,
     category_description: null,

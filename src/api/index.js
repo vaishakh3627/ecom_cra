@@ -17,6 +17,7 @@ export function graphQLObj(type = "") {
   }
 
   let REACT_APP_API_URL = configApp.REACT_APP_API_URL;
+  console.log(type);
   switch (type) {
     case "email":
       REACT_APP_API_URL = REACT_APP_API_URL + "/ecom-email-services";

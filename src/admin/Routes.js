@@ -7,6 +7,7 @@ import Home from "./container/Home";
 const AdminRoutes = () => {
   return (
     <Routes>
+      {/* <Route path="admin" element={<Home />} /> */}
       <Route path="admin/" element={<Home />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>

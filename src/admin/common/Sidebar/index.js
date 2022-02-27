@@ -1,75 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { useMutation, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { Accordion, Container, Row } from "react-bootstrap";
 import { BiCategoryAlt } from "react-icons/bi";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import { createCategory, getCategories } from "./api";
 import AddNewCategory from "../AddCategory";
+import { getCategories } from "../../api";
 
 import "./styles.scss";
 
 const Sidebar = () => {
-  const createCategoryMutations = useMutation(createCategory, {
-    onSuccess: (res) => {
-      console.log(res);
-    },
-    onError: () => {
-      console.log("Nope");
-    },
-  });
-
   const getCategoriesQuery = useQuery("categories", getCategories);
+  //   const [categories, setCategories] = useState([]);
 
   const [addCategoryVisible, setAddCategoryVisible] = useState(false);
   const sidebarItems = [
     {
       name: "Categories",
       icon: <BiCategoryAlt />,
-      items: [
-        {
-          name: "CategoryOne",
-          route: "one",
-        },
-        {
-          name: "CategoryTwo",
-          route: "two",
-        },
-        {
-          name: "CategoryThree",
-          route: "three",
-        },
-      ],
     },
     {
       name: "Orders",
       icon: <MdProductionQuantityLimits />,
-      items: [
-        {
-          name: "CategoryOne",
-          route: "one",
-        },
-        {
-          name: "CategoryTwo",
-          route: "two",
-        },
-        {
-          name: "CategoryThree",
-          route: "three",
-        },
-      ],
     },
   ];
 
   const handleCategoryAdd = (data) => {
-    createCategoryMutations.mutate(data);
+    // createCategoryMutation.mutate(data);
   };
 
   return (
     <Container className="admin-sidebar-container py-2">
-      {console.log(getCategoriesQuery)}
+      {console.log(getCategoriesQuery.data)}
       <AddNewCategory
         show={addCategoryVisible}
         onClose={() => setAddCategoryVisible(false)}
@@ -92,13 +56,24 @@ const Sidebar = () => {
                 </h6>
               </Row>
               <hr />
-              {item.items.map((el, index) => (
-                <Row className="py-2">
-                  <Link to={`admin/categories/${el.route}`}>
-                    <h6>{el.name}</h6>
-                  </Link>
-                </Row>
-              ))}
+              {getCategoriesQuery.isSuccess &&
+                getCategoriesQuery.data.data.view_category.categories.map(
+                  (el, index) => (
+                    <Row className="py-2">
+                      {console.log(el)}
+                      <Link to={`admin/categories/${el.id}`}>
+                        <h6 title={el.category_description}>
+                          {el.category_name}
+                        </h6>
+                      </Link>
+                    </Row>
+                  )
+                )}
+              {/* <Row className="py-2">
+                <Link to={`admin/categories`}>
+                  <h6 className="text-primary">Show all</h6>
+                </Link>
+              </Row> */}
             </Accordion.Body>
           </Accordion.Item>
         ))}

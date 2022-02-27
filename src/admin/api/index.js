@@ -1,4 +1,4 @@
-import { mutation, query } from "../../../api";
+import { mutation, query } from "../../api";
 
 export const createCategory = async (fields) =>
   mutation(
@@ -8,19 +8,19 @@ export const createCategory = async (fields) =>
     success
     message
     }`,
-    "admin"
+    `admin`
   );
 
 export const getCategories = async () =>
   query(
-    `view_category {
-      categories {
+    "view_category",
+    {},
+    `categories {
           _id
           category_name
           category_description
         }
         success
-        message
-    }`,
-    "member"
+        message`,
+    `member`
   );
