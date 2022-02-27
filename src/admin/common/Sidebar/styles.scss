@@ -7,16 +7,17 @@
     svg {
       margin-right: 10px;
     }
-    background-color: transparent !important;
+    background-color: $light-grey !important;
     border-color: transparent !important;
     box-shadow: none !important;
   }
+  .accordion-body {
+    background-color: $light-grey !important;
+  }
   .accordion-button:focus {
-    background-color: transparent !important;
   }
   .accordion-button:hover {
     color: blue;
-    background-color: transparent !important;
   }
   .admin-sidebar-sub-items {
   }
