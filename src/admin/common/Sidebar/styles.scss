@@ -3,6 +3,12 @@
 .admin-sidebar-container {
   background-color: $light-grey;
   height: 100%;
+  h6 {
+    margin: 0px !important;
+  }
+  hr {
+    margin: 5px;
+  }
   .accordion-button {
     svg {
       margin-right: 10px;
@@ -14,12 +20,32 @@
   .accordion-body {
     background-color: $light-grey !important;
   }
-  .accordion-button:focus {
-  }
   .accordion-button:hover {
     color: blue;
   }
   .admin-sidebar-sub-items {
+  }
+  .admin-sidebar-item-header {
+  }
+  .sidebar-add {
+    cursor: pointer;
+    transition: transform 0.2s;
+    h6 {
+      display: flex !important;
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+  .sidebar-button-add {
+    margin-left: 10px;
+    color: $primary;
+  }
+  .sidebar-add:hover {
+    transform: scale(1.1);
+    background-color: $soft-grey !important;
+    border-radius: 10px;
+    .sidebar-button-add {
+    }
   }
 }
 .admin-sidebar-item {

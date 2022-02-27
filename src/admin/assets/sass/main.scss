@@ -1,1 +1,18 @@
 @import "./layouts";
+@import "./fonts";
+@import "./layouts";
+
+.admin-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.admin-contents {
+  height: calc(100vh - 68px) !important;
+  overflow: hidden;
+}
+
+.admin-navbar {
+  height: 68px !important;
+}
