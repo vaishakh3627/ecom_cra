@@ -1,9 +1,10 @@
 import React from "react";
+import Categories from "./components/Categories";
 
 const HomeComponent = () => {
   return (
     <div>
-      <h1>Admin Home</h1>
+      <Categories />
     </div>
   );
 };

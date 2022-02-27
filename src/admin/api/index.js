@@ -4,10 +4,8 @@ export const createCategory = async (fields) =>
   mutation(
     "add_category",
     fields,
-    `{
-    success
-    message
-    }`,
+    `success
+    message`,
     `admin`
   );
 

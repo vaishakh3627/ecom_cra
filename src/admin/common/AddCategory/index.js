@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
-import { Button, Collapse, Form, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 
 import { createCategory } from "../../api";
 
-const AddNewCategory = ({ show, onClose, onSubmit }) => {
+const AddNewCategory = ({ show, onClose }) => {
   const createCategoryMutation = useMutation(createCategory, {
     onSuccess: (res) => {
       console.log(res);
@@ -17,6 +17,7 @@ const AddNewCategory = ({ show, onClose, onSubmit }) => {
   const [data, setData] = useState({
     category_name: null,
     category_description: null,
+    sub_category_data: [],
   });
   const updateData = (data) =>
     setData((previousState) => ({
@@ -24,9 +25,7 @@ const AddNewCategory = ({ show, onClose, onSubmit }) => {
       ...data,
     }));
 
-  // const [subCategoryData, setSubCategoryData] = useState([]);
-  // const addSubCategory = (data) =>
-  //   setSubCategoryData((previousState) => [...previousState, data]);
+  const onSubmit = () => createCategoryMutation.mutate(data);
 
   return (
     <Modal size="lg" show={show} onHide={onClose}>
@@ -53,22 +52,6 @@ const AddNewCategory = ({ show, onClose, onSubmit }) => {
               placeholder="Description"
             />
           </Form.Group>
-          {/* <hr />
-          <h4>Subcategories</h4>
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Category" />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Description</Form.Label>
-            <Form.Control as="textarea" placeholder="Description" />
-          </Form.Group>
-          <Collapse>
-            <h4>New</h4>
-          </Collapse>
-          <Button onClick={() => console.log("addSubCategoru")}>
-            Add Sub-category
-          </Button> */}
         </Form>
       </Modal.Body>
       <Modal.Footer>

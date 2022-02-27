@@ -17,7 +17,7 @@ const AuthProvider = (props) => {
     });
 
   const tokenDummy =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjE1MWRmOWVhODA2MzQ2OGIwMTBjNzRjIiwiaWF0IjoxNjQ1ODgzNTIxLCJleHAiOjE2NDg0NzU1MjF9.9Z2XDb-lmLWfq2Jza-er7x5Ludvsueoa7SFmeYFFe64";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjIxYmJjZWZhODA2MzQ2OGIwM2IzNmI3IiwiaWF0IjoxNjQ1OTg1MTQyLCJleHAiOjE2NDg1NzcxNDJ9.SI9pU6kJs9SvWKzDllZqaoQFXd9eG7eVGbCT7UfaV-g";
 
   useEffect(() => {
     localStorage.setItem("ecom-user-key", JSON.stringify(tokenDummy));

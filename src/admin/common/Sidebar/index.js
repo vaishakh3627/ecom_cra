@@ -13,7 +13,6 @@ import "./styles.scss";
 
 const Sidebar = () => {
   const getCategoriesQuery = useQuery("categories", getCategories);
-  //   const [categories, setCategories] = useState([]);
 
   const [addCategoryVisible, setAddCategoryVisible] = useState(false);
   const sidebarItems = [
@@ -33,7 +32,6 @@ const Sidebar = () => {
 
   return (
     <Container className="admin-sidebar-container py-2">
-      {console.log(getCategoriesQuery.data)}
       <AddNewCategory
         show={addCategoryVisible}
         onClose={() => setAddCategoryVisible(false)}
@@ -59,8 +57,7 @@ const Sidebar = () => {
               {getCategoriesQuery.isSuccess &&
                 getCategoriesQuery.data.data.view_category.categories.map(
                   (el, index) => (
-                    <Row className="py-2">
-                      {console.log(el)}
+                    <Row key={index} className="py-2">
                       <Link to={`admin/categories/${el.id}`}>
                         <h6 title={el.category_description}>
                           {el.category_name}

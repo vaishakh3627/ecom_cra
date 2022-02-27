@@ -1,0 +1,43 @@
+@import "../../../assets/sass/variables";
+
+.title-with-add {
+  display: flex !important;
+  flex: 1 !important;
+  justify-content: space-between;
+  margin: 0px;
+  .category-button-add {
+    margin-left: 10px;
+    color: $primary !important;
+  }
+  .category-button-add:hover {
+    transform: scale(1.4);
+  }
+}
+
+.home-categories {
+  .home-category-card {
+    border-radius: 10px;
+    border-color: transparent !important;
+    background-color: whitesmoke;
+  }
+  .home-category-header {
+    button {
+      background-color: whitesmoke;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+  .accordion-item {
+    border: none !important;
+    background-color: transparent !important;
+  }
+  .accordion-body {
+    background-color: $white !important;
+  }
+  .accordion-button:hover {
+    color: blue;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: $white !important;
+  }
+}
