@@ -3,16 +3,17 @@
 @import "./layouts";
 
 .admin-content-wrapper {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 .admin-contents {
-  height: calc(100vh - 68px) !important;
-  overflow: hidden;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .admin-navbar {
-  height: 68px !important;
+    height: 68px !important;
 }

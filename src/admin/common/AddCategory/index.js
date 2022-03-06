@@ -30,6 +30,7 @@ const AddNewCategory = ({ show, onClose, onSubmit }) => {
 
   return (
     <Modal size="lg" show={show} onHide={onClose}>
+      {console.log(data)}
       <Modal.Header closeButton>
         <Modal.Title>Add Category</Modal.Title>
       </Modal.Header>
@@ -75,7 +76,7 @@ const AddNewCategory = ({ show, onClose, onSubmit }) => {
         <Button variant="secondary" onClick={onClose}>
           Cancel
         </Button>
-        <Button variant="primary" onClick={() => onSubmit(data)}>
+        <Button variant="primary" onClick={() => createCategoryMutation.mutate(data)}>
           Add
         </Button>
       </Modal.Footer>

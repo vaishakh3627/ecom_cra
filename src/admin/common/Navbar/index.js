@@ -3,7 +3,6 @@ import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const AdminNavbar = () => (
   <Navbar
-    className="admin-navbar"
     collapseOnSelect
     expand="lg"
     bg="dark"
