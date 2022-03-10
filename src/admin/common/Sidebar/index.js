@@ -13,7 +13,6 @@ import "./styles.scss";
 
 const Sidebar = () => {
   const getCategoriesQuery = useQuery("categories", getCategories);
-  //   const [categories, setCategories] = useState([]);
 
   const [addCategoryVisible, setAddCategoryVisible] = useState(false);
   const sidebarItems = [
