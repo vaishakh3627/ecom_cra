@@ -1,14 +1,14 @@
 import React from "react";
 
-import MobilePromotion from "../mobilePromotion";
+import MobilePromotion from "../MobilePromotion";
 import HeaderBottom from "./HeaderBottom";
-import HeaderTop from "./HeaderTop";
+import Navbar from "./Navbar";
 import MobileMenu from "./MobileMenu";
 
 const Header = () => <>
     <header className="header-area header-style-1 header-height-2">
         <MobilePromotion />
-        <HeaderTop />
+        <Navbar />
         <HeaderBottom />
     </header>
     <MobileMenu />

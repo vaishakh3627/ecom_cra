@@ -4,10 +4,16 @@ const AuthContext = createContext();
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState({
-    type: "admin",
+    type: "user",
     token: null,
     isLoading: true,
   });
+
+  const toggleUserType = (type) =>
+    setUser(previousState => ({
+      ...previousState,
+      type: type
+    }))
 
   const updateUser = (token, type) =>
     setUser({
@@ -22,12 +28,12 @@ const AuthProvider = (props) => {
   useEffect(() => {
     localStorage.setItem("ecom-user-key", JSON.stringify(tokenDummy));
     let token = JSON.parse(localStorage.getItem("ecom-user-key"));
-    if (token !== user.token) updateUser(token, "admin");
+    if (token !== user.token) updateUser(token, "user");
     else updateUser(null);
   }, []);
 
   const signin = (token, cb) => {
-    updateUser(token, "admin");
+    updateUser(token, "user");
     localStorage.setItem("ecom-user-key", JSON.stringify(token));
     cb();
   };
@@ -41,6 +47,7 @@ const AuthProvider = (props) => {
     user,
     signin,
     signout,
+    toggleUserType
   };
 
   return <AuthContext.Provider value={authContextValue} {...props} />;

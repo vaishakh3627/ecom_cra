@@ -1,6 +1,7 @@
 import React from "react";
+import { Container, Dropdown, Row } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
-import Logo from "../../../assets/imgs/theme/logo.svg";
 import HotImage from "../../../assets/imgs/theme/icons/icon-hot.svg";
 import PhoneImage from "../../../assets/imgs/theme/icons/icon-headphone.svg";
 import Banner from "../../../assets/imgs/banner/banner-menu.png";
@@ -19,60 +20,56 @@ import Category8 from "../../../assets/imgs/theme/icons/category-8.svg";
 import Category9 from "../../../assets/imgs/theme/icons/category-9.svg";
 import Category10 from "../../../assets/imgs/theme/icons/category-10.svg";
 
-import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
-import DropdownList from "./HeadBotDrop";
-import { NavLink } from "react-router-dom";
-
-const DropMenu = [
+const dropMenu = [
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category1,
-    nameLine: "Milk and Dairies",
+    route: "shop-grid-right.html",
+    thumb: Category1,
+    name: "Milk and Dairies",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category2,
-    nameLine: "Clothing & beauty",
+    route: "shop-grid-right.html",
+    thumb: Category2,
+    name: "Clothing & beauty",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category3,
-    nameLine: "Pet Foods & Toy",
+    route: "shop-grid-right.html",
+    thumb: Category3,
+    name: "Pet Foods & Toy",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category4,
-    nameLine: "Baking material",
+    route: "shop-grid-right.html",
+    thumb: Category4,
+    name: "Baking material",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category5,
-    nameLine: "Fresh Fruit",
+    route: "shop-grid-right.html",
+    thumb: Category5,
+    name: "Fresh Fruit",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category6,
-    nameLine: "Wines & Drinks",
+    route: "shop-grid-right.html",
+    thumb: Category6,
+    name: "Wines & Drinks",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category7,
-    nameLine: "Fresh Seafood",
+    route: "shop-grid-right.html",
+    thumb: Category7,
+    name: "Fresh Seafood",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category8,
-    nameLine: "Fast food",
+    route: "shop-grid-right.html",
+    thumb: Category8,
+    name: "Fast food",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category9,
-    nameLine: "Vegetables",
+    route: "shop-grid-right.html",
+    thumb: Category9,
+    name: "Vegetables",
   },
   {
-    htmlLine: "shop-grid-right.html",
-    imageLine: Category10,
-    nameLine: "Bread and Juice",
+    route: "shop-grid-right.html",
+    thumb: Category10,
+    name: "Bread and Juice",
   },
 ];
 
@@ -80,26 +77,22 @@ const HeaderBottom = () => (
   <div className="header-bottom header-bottom-bg-color sticky-bar">
     <div className="container">
       <div className="header-wrap header-space-between position-relative">
-        <div className="logo logo-width-1 d-block d-lg-none">
-          <a href="index.html">
-            <img src={Logo} alt="logo" />
-          </a>
-        </div>
         <div className="header-nav d-none d-lg-flex">
           <div className="main-categori-wrap d-none d-lg-block">
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 Browse All Categories
               </Dropdown.Toggle>
-              <Dropdown.Menu style={{width: "150%"}}>
+              <Dropdown.Menu>
                 <Container>
-                  <Row>
-                    <Dropdown.Item>
-                      {DropMenu.map((item) => (
-                        <DropdownList key={item.nameLine} {...item} />
-                      ))}
-                    </Dropdown.Item>
-                  </Row>
+                  {dropMenu.map((item, key) => (
+                    <Row key={key}>
+                      <a href={item.route}>
+                        <img src={item.thumb} alt="" style={{ width: "10px" }} />
+                        <a className="justify-content-center">{item.name}</a>
+                      </a>
+                    </Row>
+                  ))}
                 </Container>
               </Dropdown.Menu>
             </Dropdown>
@@ -112,79 +105,10 @@ const HeaderBottom = () => (
                   <a href="shop-grid-right.html">Hot Deals</a>
                 </li>
                 <li>
-                  <NavLink className="" to="/">
-                    Home <i className="fi-rs-angle-down"></i>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about">About</NavLink>
-                </li>
-                <li>
                   <a href="shop-grid-right.html">
                     Shop <i className="fi-rs-angle-down"></i>
                   </a>
                   <ul className="sub-menu">
-                    <li>
-                      <a href="shop-grid-right.html">
-                        Shop Grid – Right Sidebar
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop-grid-left.html">Shop Grid – Left Sidebar</a>
-                    </li>
-                    <li>
-                      <a href="shop-list-right.html">
-                        Shop List – Right Sidebar
-                      </a>
-                    </li>
-                    <li>
-                      <a href="shop-list-left.html">Shop List – Left Sidebar</a>
-                    </li>
-                    <li>
-                      <a href="shop-fullwidth.html">Shop - Wide</a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        Single Product <i className="fi-rs-angle-right"></i>
-                      </a>
-                      <ul className="level-menu">
-                        <li>
-                          <a href="shop-product-right.html">
-                            Product – Right Sidebar
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-product-left.html">
-                            Product – Left Sidebar
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-product-full.html">
-                            Product – No sidebar
-                          </a>
-                        </li>
-                        <li>
-                          <a href="shop-product-vendor.html">
-                            Product – Vendor Infor
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="shop-filter.html">Shop – Filter</a>
-                    </li>
-                    <li>
-                      <a href="shop-wishlist.html">Shop – Wishlist</a>
-                    </li>
-                    <li>
-                      <a href="shop-cart.html">Shop – Cart</a>
-                    </li>
-                    <li>
-                      <a href="shop-checkout.html">Shop – Checkout</a>
-                    </li>
-                    <li>
-                      <a href="shop-compare.html">Shop – Compare</a>
-                    </li>
                     <li>
                       <a href="#">
                         Shop Invoice<i className="fi-rs-angle-right"></i>
@@ -213,30 +137,9 @@ const HeaderBottom = () => (
                   </ul>
                 </li>
                 <li>
-                  <a href="#">
-                    Vendors <i className="fi-rs-angle-down"></i>
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="vendors-grid.html">Vendors Grid</a>
-                    </li>
-                    <li>
-                      <a href="vendors-list.html">Vendors List</a>
-                    </li>
-                    <li>
-                      <a href="vendor-details-1.html">Vendor Details 01</a>
-                    </li>
-                    <li>
-                      <a href="vendor-details-2.html">Vendor Details 02</a>
-                    </li>
-                    <li>
-                      <a href="vendor-dashboard.html">Vendor Dashboard</a>
-                    </li>
-                    <li>
-                      <a href="vendor-guide.html">Vendor Guide</a>
-                    </li>
-                  </ul>
+                  <NavLink to="/about">About</NavLink>
                 </li>
+
                 <li className="position-static">
                   <a href="#">
                     Mega menu <i className="fi-rs-angle-down"></i>
@@ -359,74 +262,6 @@ const HeaderBottom = () => (
                           </h3>
                         </div>
                       </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="blog-category-grid.html">
-                    Blog <i className="fi-rs-angle-down"></i>
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <a href="blog-category-grid.html">Blog Category Grid</a>
-                    </li>
-                    <li>
-                      <a href="blog-category-list.html">Blog Category List</a>
-                    </li>
-                    <li>
-                      <a href="blog-category-big.html">Blog Category Big</a>
-                    </li>
-                    <li>
-                      <a href="blog-category-fullwidth.html">
-                        Blog Category Wide
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        Single Post <i className="fi-rs-angle-right"></i>
-                      </a>
-                      <ul className="level-menu level-menu-modify">
-                        <li>
-                          <a href="blog-post-left.html">Left Sidebar</a>
-                        </li>
-                        <li>
-                          <a href="blog-post-right.html">Right Sidebar</a>
-                        </li>
-                        <li>
-                          <a href="blog-post-fullwidth.html">No Sidebar</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                    Pages <i className="fi-rs-angle-down"></i>
-                  </a>
-                  <ul className="sub-menu">
-                    <li>
-                      <NavLink to="/about">About Us</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/contact">Contact</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/account">My Account</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/login">Signin</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/registration">Register</NavLink>
-                    </li>
-                    <li>
-                      <a href="page-privacy-policy.html">Privacy Policy</a>
-                    </li>
-                    <li>
-                      <a href="page-terms.html">Terms of Service</a>
-                    </li>
-                    <li>
-                      <NavLink to="*">404 Page</NavLink>
                     </li>
                   </ul>
                 </li>

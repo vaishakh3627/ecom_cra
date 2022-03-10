@@ -13,10 +13,12 @@ import Checkout from "./container/Checkout";
 import Compare from "./container/Compare";
 import Contact from "./container/Contact";
 import Wishlist from "./container/Wishlist";
+import AdminRoutes from "./admin/Routes";
 
 const ApplicationRoutes = () => {
   return (
     <Routes>
+      <Route path="admin" element={<AdminRoutes />} />
       <Route path="/" element={<Home />} />
       <Route path="signin" element={<Signin />} />
       <Route path="signup" element={<Signup />} />
