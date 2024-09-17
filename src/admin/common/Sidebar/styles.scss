@@ -1,0 +1,52 @@
+@import "../../../assets/sass/abstracts/variables";
+
+.admin-sidebar-container {
+  background-color: $color-grey-4 !important;
+  height: 100%;
+  h6 {
+    margin: 0px !important;
+  }
+  hr {
+    margin: 5px;
+  }
+  .accordion-button {
+    svg {
+      margin-right: 10px;
+    }
+    background-color: $color-grey-4 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .accordion-body {
+    background-color: $color-grey-4 !important;
+  }
+  .accordion-button:hover {
+    color: blue;
+  }
+  .admin-sidebar-sub-items {
+  }
+  .admin-sidebar-item-header {
+  }
+  .sidebar-add {
+    cursor: pointer;
+    transition: transform 0.2s;
+    h6 {
+      display: flex !important;
+      flex: 1;
+      justify-content: space-between;
+    }
+  }
+  .sidebar-button-add {
+    margin-left: 10px;
+    color: $color-primary;
+  }
+  .sidebar-add:hover {
+    transform: scale(1.1);
+    background-color: $color-grey-4 !important;
+    border-radius: 10px;
+    .sidebar-button-add {
+    }
+  }
+}
+.admin-sidebar-item {
+}
